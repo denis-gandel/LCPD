@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/load.css">
+    <title>LCDP</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+</head>
+
+<body id="body" class="load" onkeydown="onKeyDownHandler(event)">
+    <div id="containerLoad">
+        <div id="load"></div>
+    </div>
+    </button>
+    <header id="header">
+
+        <img src="./img/logo2.png" alt="LOGO - LA CASA DEL PAPEL" id="logo">
+
+        <button id="btnMenu">
+            <span class="lines"></span>
+            <span class="lines"></span>
+            <span class="lines"></span>
+        </button>
+
+    </header>
+
+    <div id="menu">
+        <div id="containerMenu">
+            <div id="coverMenu" class="one"></div>
+            <div id="linksMenu">
+                <a href="#home" class="linkMenu homeOption" onmouseover="backgroundOne()">Inicio</a>
+                <a href="#catalog" class="linkMenu catalogOption" onmouseover="backgroundTwo()">Catálogo</a>
+                <a href="#contact" class="linkMenu contactOption" onmouseover="backgroundThree()">Contáctanos</a>
+            </div>
+        </div>
+    </div>
+
+    <a name="home"></a>
+    <section id="carousel">
+        <div class="carouselImg activeImg">
+            <video class="img-1" alt="img-1" autoplay>
+                <source src="./img/homeVideo.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="carouselImg">
+            <img src="./img/bgTwo.jpg" alt="img-2">
+        </div>
+        <div class="carouselImg">
+            <img src="./img/bgThree.jpg" alt="img-3">
+        </div>
+        <div class="carouselImg">
+            <img src="./img/bgFour.jpg" alt="img-4">
+        </div>
+        <div class="carouselImg">
+            <img src="./img/bgOne.jpg" alt="img-5">
+        </div>
+        <button class="left">
+            <i class="fa-solid fa-angle-left"></i>
+        </button>
+        <button class="right">
+            <i class="fa-solid fa-angle-right"></i>
+        </button>
+    </section>
+
+    <div id="containerInfo">
+        <div class="perfil">
+            <img src="./img/logoLCDP.png" alt="">
+        </div>
+        <section id="info">
+            <p class="description">LA CASA DEL PAPEL, empresa encargada de comercializar productos de material
+                Biodegradable y Reciclad</p>
+        </section>
+    </div>
+
+    <a name="catalog"></a>
+    <section id="catalog">
+
+        <div class="product">
+            <img src="./img/prod1.jpeg" alt="product 1">
+        </div>
+
+        <div class="product">
+            <img src="./img/prod2.jpeg" alt="product 2">
+        </div>
+
+        <div class="product">
+            <img src="./img/prod3.jpeg" alt="product 3">
+        </div>
+
+        <div class="product">
+            <img src="./img/prod4.jpeg" alt="product 4">
+        </div>
+
+        <div class="product">
+            <img src="./img/prod5.jpeg" alt="product 5">
+        </div>
+
+    </section>
+
+    <a name="contact"></a>
+    <footer>
+
+        <div class="containerFooter">
+            <div class="contact">
+                <h1 class="titleContact">CONTACTOS</h1>
+                <p class="telfContact">TELEFONO: +591 76409375</p>
+                <p class="emailContact">EMAIL: lacasadelpapel.bo@gmail.com</p>
+                <p class="addresContact">DIRECCIÓN: Av. Dr. Luis Pardo entre c/ Rvdo. Luis Espinal y Pedro José Cayetano
+                    de la Llosa, 2 ½ cuadras al sur de la Av. D’Orbigny.</p>
+            </div>
+            <a href="https://www.google.com/maps/place/Dr.Luis+Pardo,+Cochabamba/data=!4m6!3m5!1s0x93e3749a5a49bd15:0x3dec37f4aa6a63e9!7e2!8m2!3d-17.3872519!4d-66.2044665?entry=gps&g_ep=CAESCTExLjQ4LjgwMRgAIP___________wEqAA%3D%3D"
+                class="map" target="_blank"></a>
+        </div>
+
+    </footer>
+
+    <div class="copy" style="text-align:center">
+        Copyright © <p style="display:inline" class="year"></p> - COEMGA
+    </div>
+
+    <script src="./js/load.js"></script>
+    <script>
+        var coverMenu = document.querySelector('#coverMenu')
+
+        function backgroundOne() {
+            coverMenu.classList.remove('two')
+            coverMenu.classList.remove('three')
+            coverMenu.classList.add('one')
+        }
+
+        function backgroundTwo() {
+            coverMenu.classList.remove('two')
+            coverMenu.classList.remove('one')
+            coverMenu.classList.add('three')
+        }
+
+        function backgroundThree() {
+            coverMenu.classList.remove('one')
+            coverMenu.classList.remove('three')
+            coverMenu.classList.add('two')
+        }
+
+    </script>
+    <script src="./js/Confeti.js"></script>
+    <script src="./js/menu.js"></script>
+    <script src="https://kit.fontawesome.com/db234e9712.js" crossorigin="anonymous"></script>
+    <script type="module" src="./js/carousel.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+
+        window.addEventListener('load', function () {
+            if (document.readyState === "complete") {
+                console.log("La página web ha sido cargada completamente.");
+                // start
+
+                const start = () => {
+                    setTimeout(function () {
+                        confetti.start()
+                    }, 1000);
+                };
+
+                const stop = () => {
+                    setTimeout(function () {
+                        confetti.stop()
+                    }, 5000);
+                };
+
+                start();
+                stop();
+            }
+        });
+
+
+    </script>
+    <script>
+        const date = new Date();
+        const year = date.getFullYear();
+        document.querySelector('.year').innerHTML = year
+    </script>
+</body>
+
+</html>

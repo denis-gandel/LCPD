@@ -1,0 +1,58 @@
+body.load{
+    overflow: hidden;
+}
+
+#containerLoad{
+    background-color: #fff;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    transition: all 0.5s ease;
+    z-index: 10000;
+
+    overflow-y: hidden;
+}
+
+#load{
+    border: 40px solid #ccc;
+    border-bottom: 40px solid #1E5128;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+
+    animation: loadRotate 3s linear infinite;
+}
+
+@keyframes loadRotate {
+
+    0%{
+        transform: rotate(0deg);
+    }
+
+    25%{
+        transform: rotate(90deg);
+        border-left: 40px solid #1E5128;
+    }
+
+    50%{
+        transform: rotate(180deg);
+        border-left: 40px solid #1E5128;
+        border-top: 40px solid #1E5128;
+    }
+
+    75%{
+        transform: rotate(270deg);
+        border-left: 40px solid #1E5128;
+    }
+    
+    100%{
+        transform: rotate(360deg);
+    }
+}
